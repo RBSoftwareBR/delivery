@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 import 'login/login_page.dart';
 
-
-
 class SplashPage extends StatefulWidget {
   final String code = 'Splash Page';
 
@@ -24,7 +22,13 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(const Duration(seconds: 3)).then((v) {
+    Future.delayed(const Duration(milliseconds: 100)).then((v){
+      setState((){
+      H = MediaQuery.of(context).size.width * 0.55;
+      W =MediaQuery.of(context).size.height * 0.55;
+      });
+    });
+    Future.delayed(const Duration(seconds: 5)).then((v) {
       try {
         if (auth.currentUser == null) {
           substituir(context, const LoginPage());
@@ -36,16 +40,15 @@ class _SplashPageState extends State<SplashPage> {
             substituir(context, const HomePage());
           }).catchError((err) {
             onError(err, widget.code);
-            substituir(context,const  LoginPage());
+            substituir(context, const LoginPage());
           });
         }
-      }catch(err){
+      } catch (err) {
         onError(err, widget.code);
         substituir(context, const LoginPage());
       }
     });
   }
-
 
   @override
   void dispose() {
@@ -54,23 +57,23 @@ class _SplashPageState extends State<SplashPage> {
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  double H = 0;
+  double W = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor: Colors.white,
       key: scaffoldKey,
-      body: Container(
-        width: getLargura(context),
-        height: getAltura(context) * 1,
-        decoration: const BoxDecoration(
-          color: Colors.white,
-        ),
+      body: Center(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
-          child: Image.asset(
-            'assets/yupi_delivery.jpeg',
-            width: MediaQuery.of(context).size.width * 0.35,
-            height: MediaQuery.of(context).size.height * 0.35,
-            fit: BoxFit.scaleDown,
+          child: AnimatedContainer(
+            width: W,
+            height: H,
+            duration: const Duration(seconds: 3),
+            child: Image.network(
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqs5DFMXFOV1jxJHz8D42DsSULIpaPzoVDeQ&usqp=CAU',
+              fit: BoxFit.contain,
+            ),
           ),
         ),
       ),

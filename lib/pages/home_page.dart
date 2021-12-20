@@ -1,6 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:delivery/helpers/constants.dart';
 import 'package:delivery/helpers/styles.dart';
+import 'package:delivery/pages/pedidos/pedidos_page.dart';
+import 'package:delivery/pages/perfil_page.dart';
+import 'package:delivery/pages/produtos_page.dart';
 import 'package:flutter/material.dart';
 import 'package:mdi/mdi.dart';
 
@@ -35,13 +37,14 @@ class _HomePageState extends State<HomePage> {
   }
 
   final List<Widget> _telas = [
-    Container(),
-    Container(),
-    Container(),
+
+    const PedidosPage(),
+    const ProdutosPage(),
+    const PerfilPage(),
   ];
   final iconList = <Widget>[
     const Icon(
-      Mdi.trophyVariantOutline,
+      Mdi.truckDelivery,
       size: 35,
       color: Colors.white,
     ),

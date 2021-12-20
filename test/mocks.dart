@@ -1,8 +1,10 @@
 
-import '../lib/models/adicional_model.dart';
-import '../lib/models/categoria_model.dart';
-import '../lib/models/opcao_model.dart';
-import '../lib/models/produto_model.dart';
+
+
+import 'package:delivery/models/adicional_model.dart';
+import 'package:delivery/models/categoria_model.dart';
+import 'package:delivery/models/produto_model.dart';
+import 'package:delivery/models/opcao_model.dart';
 
 List<Categoria> categoriasMock = [
   Categoria(

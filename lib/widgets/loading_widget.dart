@@ -60,10 +60,10 @@ class _LoadingWidgetState extends State<LoadingWidget> {
                 size: 100,
               ),
               Center(
-                  child: Image.asset(
-                'assets/logo_icone.png',
+                  child: Image.network(
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqs5DFMXFOV1jxJHz8D42DsSULIpaPzoVDeQ&usqp=CAU',
                 width: 80,
-                height: 100,
+                height: 50,
                 fit: BoxFit.contain,
               )),
             ],

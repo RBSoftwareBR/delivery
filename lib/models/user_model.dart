@@ -1,6 +1,3 @@
-
-import 'endereco_model.dart';
-
 class Usuario {
   String id;
   String? nome;
@@ -12,12 +9,11 @@ class Usuario {
   DateTime createdAt;
   DateTime updatedAt;
   DateTime? deletedAt;
-  Endereco? endereco;
 
 
   @override
   String toString() {
-    return 'Usuario{id: $id, nome: $nome, email: $email, foto: $foto, telefone: $telefone, notificacoes: $notificacoes, permissao: $permissao, created_at: $createdAt, updated_at: $updatedAt, deleted_at: $deletedAt, endereco: $endereco}';
+    return 'Usuario{id: $id, nome: $nome, email: $email, foto: $foto, telefone: $telefone, notificacoes: $notificacoes, permissao: $permissao, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt}';
   }
 
   Usuario(
@@ -30,8 +26,7 @@ class Usuario {
       required this.permissao,
       required this.createdAt,
       required this.updatedAt,
-      this.deletedAt,
-      this.endereco});
+      this.deletedAt,});
 
   Map<String, dynamic> toMap() {
     return {
@@ -45,7 +40,6 @@ class Usuario {
       'created_at': createdAt.millisecondsSinceEpoch,
       'updated_at': updatedAt.millisecondsSinceEpoch,
       'deleted_at': deletedAt == null? null: deletedAt!.millisecondsSinceEpoch,
-      'endereco': endereco == null? null: endereco!.toMap(),
     };
   }
 
@@ -61,7 +55,6 @@ class Usuario {
       createdAt: DateTime.fromMillisecondsSinceEpoch(map['created_at']),
       updatedAt: DateTime.fromMillisecondsSinceEpoch(map['updated_at']),
       deletedAt: map['deleted_at'] == null? null: DateTime.fromMillisecondsSinceEpoch(map['deleted_at']),
-      endereco:map['endereco'] == null? null: Endereco.fromMap(map['endereco']),
     );
   }
 }

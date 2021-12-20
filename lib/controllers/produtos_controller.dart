@@ -4,6 +4,7 @@ import 'package:delivery/helpers/constants.dart';
 import 'package:delivery/helpers/helper.dart';
 import 'package:delivery/models/produto_model.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:rxdart/rxdart.dart';
 
@@ -17,18 +18,28 @@ class ProdutosController extends BlocBase {
   Sink<List<Produto>> get inProdutos => produtosController.sink;
   String endPoint = 'produtos/';
   List<Produto> produtos = [];
+  TextEditingController searchController = TextEditingController();
   ProdutosController();
 
   String termoDeBusca = '';
   int offset = 0;
   int limitador = 20;
-  BuscarProdutos({String termo = '', reset = false}) {
+  String? categoriaSelecionada;
+  BehaviorSubject<String?> controllerCategoriaSelecionada =
+  BehaviorSubject<String?>();
+  Stream<String?> get outCategoriaSelecionada => controllerCategoriaSelecionada.stream;
+  Sink<String?> get inCategoriaSelecionada => controllerCategoriaSelecionada.sink;
+  Future<bool> buscarProdutos({String termo = '', reset = false}) {
     if (!reset) {
       if (termo != termoDeBusca) {
         offset = 0;
+        produtos = [];
+        inProdutos.add(produtos);
       }
     } else {
       offset = 0;
+      produtos = [];
+      inProdutos.add(produtos);
     }
 
     if (termo != '') {
@@ -36,8 +47,10 @@ class ProdutosController extends BlocBase {
         termo,
       );
     }
+    categoriaSelecionada = null;
     termoDeBusca = termo;
-    produtos = [];
+
+    inCategoriaSelecionada.add(categoriaSelecionada);
     String url = baseApi +
         endPoint +
         '${termoDeBusca == '' ? '' : termoDeBusca}/$limitador/$offset';
@@ -46,7 +59,6 @@ class ProdutosController extends BlocBase {
       Uri.parse(url),
     )
         .then((v) {
-
       var j = json.decode(v.body);
       for (var v in j) {
         try {
@@ -65,19 +77,24 @@ class ProdutosController extends BlocBase {
     });
   }
 
-  BuscarProdutosPorCategoria(String c, {String termo = '', reset = false}) {
-    String url = baseApi +
-        endPoint +
-        'categoria/${termoDeBusca == '' ? '' : termoDeBusca}/${limitador}/${offset}/${c}';
+  buscarProdutosPorCategoria(String c, {String termo = '', reset = false}) {
+    categoriaSelecionada = c;
     if (!reset) {
       if (termo != termoDeBusca) {
         offset = 0;
+        produtos = [];
+        inProdutos.add(produtos);
       }
     } else {
       offset = 0;
+      produtos = [];
+      inProdutos.add(produtos);
     }
     termoDeBusca = termo;
-    produtos = [];
+    inCategoriaSelecionada.add(categoriaSelecionada);
+    String url = baseApi +
+        endPoint +
+        'categoria/${termoDeBusca == '' ? '' : termoDeBusca}/$limitador/$offset/$c';
     return http.get(Uri.parse(url)).then((v) {
       var j = json.decode(v.body);
       for (var v in j) {
@@ -85,7 +102,7 @@ class ProdutosController extends BlocBase {
           Produto p = Produto.fromMap(v);
           produtos.add(p);
         } catch (err) {
-          onError(err, code);;
+          onError(err, code);
         }
       }
       inProdutos.add(produtos);
@@ -97,9 +114,9 @@ class ProdutosController extends BlocBase {
     });
   }
 
-  CadastrarProduto(Produto p) {
+  cadastrarProduto(Produto p) {
     String url = baseApi + endPoint + 'add';
-    return http.post(Uri.parse(url), body: p.toMap()).then((v) {
+    return Dio().post(url, data: p.toMap()).then((v) {
       return true;
     }).catchError((err) {
       onError(err, code);
@@ -120,7 +137,6 @@ class ProdutosController extends BlocBase {
   Future<bool> removerProduto(Produto p) {
     p.visivel = false;
     p.deletedAt = DateTime.now();
-    print("AQUI ID ${p.id}");
     String url = baseApi + endPoint + 'edit';
     return http.post(Uri.parse(url), body: p.toMap()).then((v) {
       return true;
@@ -130,3 +146,5 @@ class ProdutosController extends BlocBase {
     });
   }
 }
+
+late ProdutosController pc;

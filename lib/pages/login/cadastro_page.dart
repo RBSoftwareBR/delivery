@@ -10,7 +10,6 @@ import 'package:delivery/widgets/my_app_bar.dart';
 import 'package:delivery/widgets/my_check_box.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text2/flutter_masked_text2.dart';
-import 'package:mdi/mdi.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../home_page.dart';

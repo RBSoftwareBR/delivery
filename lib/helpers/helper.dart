@@ -11,6 +11,11 @@ double getLargura(context) {
 }
 
 
+
+String capitalize(String s) {
+  return "${s[0].toUpperCase()}${s.substring(1)}";
+}
+
 Route animatedRoute(context, page) {
   return PageRouteBuilder(transitionDuration: const Duration(milliseconds: 800),
     pageBuilder: (context, animation, secondaryAnimation) => page,

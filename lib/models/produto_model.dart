@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:delivery/helpers/helper.dart';
+
 import 'adicional_model.dart';
 
 class Produto {
@@ -52,6 +56,7 @@ class Produto {
   }
 
   factory Produto.fromMap(dynamic map) {
+
     return Produto(
       id: map['id'].toString(),
       titulo: map['titulo'].toString(),
@@ -59,18 +64,32 @@ class Produto {
       codebar: map['codebar'].toString(),
       categoriaId: map['categoriaId'].toString(),
       foto: map['foto']?.toString(),
-      preco: (map['preco'] is num
-          ? map['preco'].toDouble()
-          : double.tryParse(map['preco'])),
+      preco: double.parse(map['preco'].toString()),
       createdAt: DateTime.fromMillisecondsSinceEpoch(map['created_at']),
       updatedAt: DateTime.fromMillisecondsSinceEpoch(map['updated_at']),
       deletedAt: map['deleted_at'] == null
           ? null
           : DateTime.fromMillisecondsSinceEpoch(map['deleted_at']),
-      visivel: map['visivel'],
-      adicionais: map['adicionais'] == null
-          ? null
-          : map['adicionais'].map((map) => Adicional.fromMap(map)).toList(),
+      visivel: true,
+      adicionais: decodeAdicionais(map['adicionais']),
     );
+  }
+
+ static List<Adicional>  decodeAdicionais(var adicionais){
+    List<Adicional> adicionaisTemp = [];
+    var js = adicionais;
+    try{
+      js = json.decode(adicionais);
+    }catch(err){
+      onError(err,'Produto From Map');
+    }
+    for(var j in js){
+      try{
+        adicionaisTemp.add(Adicional.fromMap(j));
+      }catch(err){
+        onError(err,'Produto From Map');
+      }
+    }
+    return adicionaisTemp;
   }
 }

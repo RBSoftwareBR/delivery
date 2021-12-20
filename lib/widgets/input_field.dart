@@ -51,7 +51,7 @@ InputDecoration defaultInputDecoration(
         enabledBorder: border,
         floatingLabelBehavior: floatingLabelBehavior,
         alignLabelWithHint: true,
-        suffix: sufix,
+        suffixIcon: sufix,
         prefixIcon: icon == null ? null : Icon(icon, color: iconColor),
         isCollapsed: false,
         disabledBorder: unableBorder,

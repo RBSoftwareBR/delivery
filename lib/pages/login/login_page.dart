@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                         height: getLargura(context) * .4,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage('assets/logo.png'),
+                            image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqs5DFMXFOV1jxJHz8D42DsSULIpaPzoVDeQ&usqp=CAU'),
                             fit: BoxFit.fill,
                           ),
                         ),

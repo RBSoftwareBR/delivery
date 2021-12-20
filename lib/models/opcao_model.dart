@@ -1,5 +1,4 @@
 
-import 'adicional_model.dart';
 
 class Opcao {
   String nome;
@@ -21,7 +20,7 @@ class Opcao {
   factory Opcao.fromMap(dynamic map) {
     return Opcao(
       nome: map['nome'].toString(),
-      preco: map['preco'] == null? 0.0 :double.parse(map['preco']),
+      preco: map['preco'] == null? 0.0 :double.parse(map['preco'].toString()),
       isSelected: (map['isSelected'] is bool
               ? map['isSelected']
               : (map['isSelected'] is num

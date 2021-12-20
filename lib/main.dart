@@ -1,8 +1,9 @@
 import 'package:delivery/pages/splash_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/services.dart';
 import 'controllers/theme_controller.dart';
+import 'helpers/styles.dart';
 
 
 
@@ -25,11 +26,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations(
+        <DeviceOrientation>[DeviceOrientation.portraitUp]);
+    SystemChrome.setSystemUIOverlayStyle(
+        const  SystemUiOverlayStyle(statusBarColor: corPrimaria));
     return StreamBuilder<ThemeData>(
         stream: themeController.outTheme,
         builder: (context, snapshot) {
           return MaterialApp(
-            title: 'Delivery',
+            title: 'Delivery',debugShowCheckedModeBanner: false,
             theme: snapshot.data,
             home: const SplashPage(),
           );

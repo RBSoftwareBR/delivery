@@ -1,6 +1,5 @@
 import 'package:delivery/helpers/helper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../helpers/styles.dart';
 
 myAppBar(String titulo, context,
@@ -8,7 +7,7 @@ myAppBar(String titulo, context,
     bool showBack = false,
     bool close = false,
     double elevation = 0,
-    double size = 40,
+    double size = 22,
     centerTitle = true,
     bool isImage = false}) {
   if (showBack) {
@@ -24,39 +23,8 @@ myAppBar(String titulo, context,
               size: 30,
             ),
             onTap: () {
-              if (close) {
-                showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        shape: Border.all(),
-                        title: const Text('Deseja Sair?'),
-                        content: const Text('Tem Certeza?'),
-                        actions: <Widget>[
-                          MaterialButton(
-                            child: const Text(
-                              'Cancelar',
-                              style: TextStyle(color: Colors.blue),
-                            ),
-                            onPressed: () {
-                              Navigator.pop(context);
-                            },
-                          ),
-                          MaterialButton(
-                            child: const Text(
-                              'Sair',
-                              style: TextStyle(color: Colors.red),
-                            ),
-                            onPressed: () {
-                              SystemNavigator.pop();
-                            },
-                          )
-                        ],
-                      );
-                    });
-              } else {
+
                 Navigator.of(context).pop();
-              }
             }),
       ),
       backgroundColor: corPrimaria,

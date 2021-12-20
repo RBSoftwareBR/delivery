@@ -4,23 +4,21 @@ import 'package:bloc_pattern/bloc_pattern.dart';
 import 'package:delivery/helpers/constants.dart';
 import 'package:delivery/helpers/helper.dart';
 import 'package:delivery/models/categoria_model.dart';
-import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 import 'package:rxdart/rxdart.dart';
 
 class CategoriasController extends BlocBase {
   final String code = 'Categorias Controller';
-  BehaviorSubject<List<Categoria>> categoriasController =
-  BehaviorSubject<List<Categoria>>();
-  Stream<List<Categoria>> get outCategorias => categoriasController.stream;
-  Sink<List<Categoria>> get inCategorias => categoriasController.sink;
+  BehaviorSubject<List<Categoria>?> categoriasController =
+  BehaviorSubject<List<Categoria>?>();
+  Stream<List<Categoria>?> get outCategorias => categoriasController.stream;
+  Sink<List<Categoria>?> get inCategorias => categoriasController.sink;
   String endPoint = 'categorias/';
   List<Categoria> categorias = [];
   CategoriasController();
 
-  BuscarCategoriaPorId(String id) {
+  buscarCategoriaPorId(String id) {
     String url = baseApi + endPoint + 'get/$id';
-    print("AQUI URL ${url}");
     return http
         .get(
       Uri.parse(url),
@@ -29,11 +27,10 @@ class CategoriasController extends BlocBase {
       var j = json.decode(v.body);
       for (var v in j) {
         try {
-          return Categoria.fromJson(v);
+          return Categoria.fromMap(v);
 
         } catch (err) {
           onError(err, code);
-          print('Erro ao converter Categoria ${v}');
         }
       }
     }).catchError((err) {
@@ -41,9 +38,8 @@ class CategoriasController extends BlocBase {
     });
   }
 
-  BuscarCategorias() {
+  buscarCategorias() {
     String url = baseApi + endPoint + 'get/all';
-    print("AQUI URL ${url}");
     categorias = [];
     http
         .get(
@@ -53,11 +49,10 @@ class CategoriasController extends BlocBase {
       var j = json.decode(v.body);
       for (var v in j) {
         try {
-          Categoria p = Categoria.fromJson(v);
+          Categoria p = Categoria.fromMap(v);
           categorias.add(p);
         } catch (err) {
           onError(err, code);
-          print('Erro ao converter Categoria ${v}');
         }
       }
       inCategorias.add(categorias);
@@ -66,14 +61,11 @@ class CategoriasController extends BlocBase {
     });
   }
 
-  Future<bool> CadastrarCategoria(Categoria c) {
+  Future<bool> cadastrarCategoria(Categoria c) {
     String url = baseApi + endPoint + 'add';
-    print('Iniciando Cadastrar ${url}');
-    print("AQUI JSON ${json.encode(c.toJson())}");
     return http
-        .post(Uri.parse(url), body: c.toJson())
+        .post(Uri.parse(url), body: json.encode(c.toMap()))
         .then((v) {
-      print("AQUI RESPOSTA ${v.body}");
       return true;
     }).catchError((err) {
       onError(err, code);
@@ -81,13 +73,11 @@ class CategoriasController extends BlocBase {
     });
   }
 
-  Future<bool> EditarCategoria(Categoria p) {
-    //TODO FAZER O ENDPOINT
+  Future<bool> editarCategoria(Categoria p) {
     String url = baseApi + endPoint + 'edit';
     return http
-        .post(Uri.parse(url), body: p.toJson())
+        .post(Uri.parse(url), body: p.toMap())
         .then((v) {
-      print("AQUI RESPOSTA ${v.body}");
       return true;
     }).catchError((err) {
       onError(err, code);
@@ -95,7 +85,7 @@ class CategoriasController extends BlocBase {
     });
   }
 
-  Future<bool> DeletarCategoria(Categoria p) {
+  Future<bool> deletarCategoria(Categoria p) {
     String url = baseApi + endPoint + 'remove/${p.id}';
     return http
         .get(
@@ -109,7 +99,7 @@ class CategoriasController extends BlocBase {
     });
   }
 
-  void FiltrarCategorias(String text) {
+  void filtrarCategorias(String text) {
     List<Categoria> categoriasFiltradas = [];
     for (var i in categorias) {
       if (i.nome.contains(text)) {
