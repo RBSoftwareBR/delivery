@@ -4,23 +4,20 @@
  
  
 <details>
-  <summary>The title of the image group</summary><details>
-   <img src=![WhatsApp Image 2021-12-20 at 19 45 04 (1)](https://user-images.githubusercontent.com/40797880/146842700-e9572a53-0f65-475c-8c7c-2ef90f4ad324.jpeg)name="image-name">
- <img src=![WhatsApp Image 2021-12-20 at 19 45 03 (3)](https://user-images.githubusercontent.com/40797880/146842696-aa173f42-6fc0-4c60-b04b-5a3c2015275c.jpeg)name="image-name">
-  <img src=![WhatsApp Image 2021-12-20 at 19 45 03](https://user-images.githubusercontent.com/40797880/146842699-7be23c46-1240-453c-b6aa-c79eb6598410.jpeg)name="image-name">
- <img src=![WhatsApp Image 2021-12-20 at 19 45 02](https://user-images.githubusercontent.com/40797880/146842713-03c0e287-b2c7-4ab4-9fa3-83b8132e5077.jpeg)name="image-name">
- <img src=![WhatsApp Image 2021-12-20 at 19 45 03 (1)](https://user-images.githubusercontent.com/40797880/146842716-7478d0f3-b3e6-479b-bae3-2fd732d7bd39.jpeg)name="image-name">
- <img src=![WhatsApp Image 2021-12-20 at 19 45 03 (2)](https://user-images.githubusercontent.com/40797880/146842719-bbe8469f-eadd-4211-9a15-76ac3bc7a7a6.jpeg)name="image-name">
- <img src=![WhatsApp Image 2021-12-20 at 19 45 04 (2)](https://user-images.githubusercontent.com/40797880/146842701-80353857-f246-4fc0-869e-2d06d8d76ba2.jpeg)name="image-name">
- <img src=![WhatsApp Image 2021-12-20 at 19 45 04 (3)](https://user-images.githubusercontent.com/40797880/146842703-0188f403-880f-4a46-8335-fd916d1b6d8a.jpeg)name="image-name">
- <img src=![WhatsApp Image 2021-12-20 at 19 45 04 (4)](https://user-images.githubusercontent.com/40797880/146842704-7d38b195-c74a-410e-9ef8-096c97362328.jpeg)name="image-name">
- <img src=![WhatsApp Image 2021-12-20 at 19 45 04](https://user-images.githubusercontent.com/40797880/146842707-337d8a22-1111-406b-83e5-23debd589619.jpeg)name="image-name">
- <img src=![WhatsApp Image 2021-12-20 at 19 45 05](https://user-images.githubusercontent.com/40797880/146842709-53706d64-f5ab-424a-a2aa-ed16f1eb1134.jpeg)name="image-name">
- <img src=![WhatsApp Image 2021-12-20 at 19 45 02 (1)](https://user-images.githubusercontent.com/40797880/146842711-056a5d97-14c3-47bf-b167-a5579b7a55fc.jpeg)name="image-name">
- <img src=![WhatsApp Image 2021-12-20 at 19 45 02 (2)](https://user-images.githubusercontent.com/40797880/146842712-8976c445-0cf4-4b33-a4ac-391ba6bb29ed.jpeg)name="image-name">
- 
-
-
+ <summaryScreens</summary><details>
+ ![WhatsApp Image 2021-12-20 at 19 45 02 (1)](https://user-images.githubusercontent.com/40797880/146843386-68fb154f-f685-47dd-bb87-16ec978a2e25.jpeg)
+![WhatsApp Image 2021-12-20 at 19 45 02 (2)](https://user-images.githubusercontent.com/40797880/146843388-1ca89c04-f322-49b1-a782-21c7688227bb.jpeg)
+ ![WhatsApp Image 2021-12-20 at 19 45 03 (1)](https://user-images.githubusercontent.com/40797880/146843371-2dc2e4ff-d4d7-41ef-8625-b6cd7da6b789.jpeg)
+ ![WhatsApp Image 2021-12-20 at 19 45 02](https://user-images.githubusercontent.com/40797880/146843391-660d5f83-5843-4e93-a0cb-c4f3e38f087e.jpeg)
+![WhatsApp Image 2021-12-20 at 19 45 03 (2)](https://user-images.githubusercontent.com/40797880/146843373-d05aa451-b4b4-455b-b9fe-283a3772e2b0.jpeg)
+![WhatsApp Image 2021-12-20 at 19 45 03 (3)](https://user-images.githubusercontent.com/40797880/146843374-6f71b51f-46d9-4be4-be06-3b535cccc650.jpeg)
+![WhatsApp Image 2021-12-20 at 19 45 03](https://user-images.githubusercontent.com/40797880/146843375-28ca18fd-f20d-4525-a493-d285375cf4ac.jpeg)
+![WhatsApp Image 2021-12-20 at 19 45 04 (1)](https://user-images.githubusercontent.com/40797880/146843377-e7a7b37f-9be9-4647-9552-d2558b862edf.jpeg)
+![WhatsApp Image 2021-12-20 at 19 45 04 (2)](https://user-images.githubusercontent.com/40797880/146843378-028c33db-8d0f-4d39-8538-621e23551115.jpeg)
+![WhatsApp Image 2021-12-20 at 19 45 04 (3)](https://user-images.githubusercontent.com/40797880/146843380-b8a9e029-2442-4786-92b9-aa336d5e9ab2.jpeg)
+![WhatsApp Image 2021-12-20 at 19 45 04 (4)](https://user-images.githubusercontent.com/40797880/146843381-363dc61d-4539-4d5d-a961-44cc9eb8a0ae.jpeg)
+![WhatsApp Image 2021-12-20 at 19 45 04](https://user-images.githubusercontent.com/40797880/146843382-c58a7364-fca8-482f-a555-04d7f4fb8960.jpeg)
+![WhatsApp Image 2021-12-20 at 19 45 05](https://user-images.githubusercontent.com/40797880/146843384-c5b636cf-2c9b-4219-9e9b-8caf3be8adbd.jpeg)
 </details>
  
  Download Link
