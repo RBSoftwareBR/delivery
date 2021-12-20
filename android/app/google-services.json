@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1082228600839",
+    "project_id": "delivery-210505",
+    "storage_bucket": "delivery-210505.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1082228600839:android:2cf1bc232bbcc171383aa2",
+        "android_client_info": {
+          "package_name": "com.rbsoftware.delivery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1082228600839-fi67bgvcod1gkaorl9hgolgucl5cugbh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rbsoftware.delivery",
+            "certificate_hash": "180222813970918d5bb8d97788ffcab964c812df"
+          }
+        },
+        {
+          "client_id": "1082228600839-uq8pka2hetjq2ab323fgc3bgasedav5t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rbsoftware.delivery",
+            "certificate_hash": "da9c62312b61768bc330b9aa97acc56ec7ad71bf"
+          }
+        },
+        {
+          "client_id": "1082228600839-2thcioia8mfurg9k6r30j3c99khifs7g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCj5k7dHMoEYhdfzEdyr9YoMW1GF49p6Kg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1082228600839-2thcioia8mfurg9k6r30j3c99khifs7g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
