@@ -20,3 +20,5 @@
  
  
  <a id="raw-url" href="https://buycheap.app.br/delivery.apk">Download Link</a>
+
+Soon it will be avalible on Apple Store e App Store!
