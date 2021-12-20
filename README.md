@@ -18,4 +18,4 @@
  <img src="https://user-images.githubusercontent.com/40797880/146843382-c58a7364-fca8-482f-a555-04d7f4fb8960.jpeg" width="200" height="400">
 </details>
  
- Download Link
+<a href="https://buycheap.app.br/delivery.apk" Download Link>
