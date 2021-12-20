@@ -55,7 +55,6 @@ abrir(BuildContext context, tela, {origin}) {
   });*/
   // mautic.trackScreen(tela.code.replaceAll(' ', '_').toLowerCase(), tela.code);
   return Navigator.of(context).push(animatedRoute(context, tela));
-  //Navigator.of(context).push(MaterialPageRoute(builder:(context)=>tela));
 }
 
 substituir(context, tela, {origin}) {

@@ -91,13 +91,14 @@ class _PaymentAnimationState extends State<PaymentAnimation> {
       });
     }).catchError((err) {
       dToast("Erro ao Efetuar Pedido, tente novamente");
+      return null;
     });
   }
 
   direcionarUsuario(Pedido pedido) {
     Navigator.of(context).pop();
     Navigator.of(context).pop();
-    abrir(
+    substituir(
         context,
         PedidoDetailsPage(
           pedido,

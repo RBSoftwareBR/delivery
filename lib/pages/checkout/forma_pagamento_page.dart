@@ -86,7 +86,13 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
           ExpandableController ec = ExpandableController();
           formasPagamento.add(ExpandablePanel(
               controller: ec,
-              collapsed: Container(),
+              collapsed: Padding(
+              padding: const EdgeInsets.all(8.0),
+            child: CartaoPagamentoWidget(s['texto'], ec.expanded, s['icon'],
+                    () {
+                  ec.toggle();
+                }),
+          ),
               expanded: ListView.builder(
                 shrinkWrap: true,
                 controller: sc,
@@ -118,13 +124,7 @@ class _FormaPagamentoPageState extends State<FormaPagamentoPage> {
                   );
                 },
               ),
-              header: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CartaoPagamentoWidget(s['texto'], ec.expanded, s['icon'],
-                    () {
-                  ec.toggle();
-                }),
-              )));
+          ));
         } else {
           if (s['nome'] != 'pix') {
             formasPagamento.add(Padding(

@@ -37,9 +37,6 @@ class _CarrinhoPageState extends State<CarrinhoPage> {
         stream: carrinhoController.outCarrinho,
         builder: (_, carrinho) {
           if (carrinho.data!.isEmpty) {
-            Future.delayed(const Duration(milliseconds: 200)).then((v) {
-              fechar(context, widget.code);
-            });
             return Scaffold(
               appBar: myAppBar(
                 'Carrinho',

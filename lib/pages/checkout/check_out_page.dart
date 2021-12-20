@@ -363,7 +363,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                           trocoPara: trocoController.numberValue,
                           idUser: localUser!.id,
                           usuario: localUser!,
-                          bandeira: pagamentoSelecionado['bandeira']['nome'],
+                          bandeira:pagamentoSelecionado['bandeira']!=null? pagamentoSelecionado['bandeira']['nome']:'',
                           produtos: snap.data!,
                           valorProdutos: total,
                           obs: obsController.text);
